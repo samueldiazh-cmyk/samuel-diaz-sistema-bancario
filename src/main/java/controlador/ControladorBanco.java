@@ -40,4 +40,14 @@ public class ControladorBanco {
         cuentas.add(c);
         return "Cuenta creada:\n" + c.mostrarDatos();
     }
+    public String consignar(String numero, double valor) {
+        Cuenta c = buscarCuenta(numero);
+        if (c == null) {
+            return "Cuenta no encontrada";
+        }
+        if (c.consignar(valor)) {
+            return "Consignacion exitosa\n" + c.mostrarDatos(true);
+        }
+        return "El valor debe ser mayor que cero";
+    }
 }

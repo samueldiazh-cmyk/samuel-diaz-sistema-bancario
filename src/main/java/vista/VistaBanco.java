@@ -73,8 +73,10 @@ public class VistaBanco extends javax.swing.JFrame {
         btnCrearAhorros.addActionListener(this::btnCrearAhorrosActionPerformed);
 
         btnCrearCorriente.setText("Crear cuenta corriente");
+        btnCrearCorriente.addActionListener(this::btnCrearCorrienteActionPerformed);
 
         btnConsignar.setText("Consignar");
+        btnConsignar.addActionListener(this::btnConsignarActionPerformed);
 
         btnRetirar.setText("Retirar");
 
@@ -199,6 +201,22 @@ public class VistaBanco extends javax.swing.JFrame {
         double saldo = Double.parseDouble(txtSaldo.getText());
         txaResultado.setText(controlador.crearCuentaAhorros(numero, dueno, dia, mes, anio, saldo));
     }//GEN-LAST:event_btnCrearAhorrosActionPerformed
+
+    private void btnCrearCorrienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCorrienteActionPerformed
+        String numero = txtNumero.getText();
+        String dueno = txtDueno.getText();
+        int dia = Integer.parseInt(txtDia.getText());
+        int mes = Integer.parseInt(txtMes.getText());
+        int anio = Integer.parseInt(txtAnio.getText());
+        double saldo = Double.parseDouble(txtSaldo.getText());
+        double cupo = Double.parseDouble(txtCupo.getText());
+        txaResultado.setText(controlador.crearCuentaCorriente(numero, dueno, dia, mes, anio, saldo, cupo));
+    }//GEN-LAST:event_btnCrearCorrienteActionPerformed
+
+    private void btnConsignarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsignarActionPerformed
+        double valor = Double.parseDouble(txtValor.getText());
+        txaResultado.setText(controlador.consignar(txtNumero.getText(), valor));
+    }//GEN-LAST:event_btnConsignarActionPerformed
 
     /**
      * @param args the command line arguments
