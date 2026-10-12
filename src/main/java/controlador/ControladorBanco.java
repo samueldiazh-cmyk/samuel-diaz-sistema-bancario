@@ -50,4 +50,14 @@ public class ControladorBanco {
         }
         return "El valor debe ser mayor que cero";
     }
+    public String retirar(String numero, double valor) {
+        Cuenta c = buscarCuenta(numero);
+        if (c == null) {
+            return "Cuenta no encontrada";
+        }
+        if (c.retirar(valor)) {
+            return "Retiro exitoso\n" + c.mostrarDatos(true);
+        }
+        return "Retiro rechazado: fondos insuficientes\n" + c.mostrarDatos(true);
+    }
 }
