@@ -60,4 +60,19 @@ public class ControladorBanco {
         }
         return "Retiro rechazado: fondos insuficientes\n" + c.mostrarDatos(true);
     }
+    public String consultarSaldo(String numero) {
+        Cuenta c = buscarCuenta(numero);
+        if (c == null) {
+            return "Cuenta no encontrada";
+        }
+        return c.mostrarDatos(true);
+    }
+
+    public String consultarDatos(String numero) {
+        Cuenta c = buscarCuenta(numero);
+        if (c == null) {
+            return "Cuenta no encontrada";
+        }
+        return c.mostrarDatos();
+    }
 }

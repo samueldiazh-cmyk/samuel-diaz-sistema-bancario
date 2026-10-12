@@ -239,11 +239,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Consultar saldo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaldoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnDatos">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver todos los datos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDatosActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
