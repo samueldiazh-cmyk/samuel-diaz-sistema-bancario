@@ -4,11 +4,9 @@
  */
 package vista;
 
-/**
- *
- * @author cdval
- */
+import controlador.ControladorBanco;
 public class VistaBanco extends javax.swing.JFrame {
+    private ControladorBanco controlador = new ControladorBanco();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaBanco.class.getName());
 
@@ -72,6 +70,7 @@ public class VistaBanco extends javax.swing.JFrame {
         jLabel8.setText("Cupo sobregiro");
 
         btnCrearAhorros.setText("Crear cuenta ahorros");
+        btnCrearAhorros.addActionListener(this::btnCrearAhorrosActionPerformed);
 
         btnCrearCorriente.setText("Crear cuenta corriente");
 
@@ -190,6 +189,16 @@ public class VistaBanco extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCrearAhorrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearAhorrosActionPerformed
+        String numero = txtNumero.getText();
+        String dueno = txtDueno.getText();
+        int dia = Integer.parseInt(txtDia.getText());
+        int mes = Integer.parseInt(txtMes.getText());
+        int anio = Integer.parseInt(txtAnio.getText());
+        double saldo = Double.parseDouble(txtSaldo.getText());
+        txaResultado.setText(controlador.crearCuentaAhorros(numero, dueno, dia, mes, anio, saldo));
+    }//GEN-LAST:event_btnCrearAhorrosActionPerformed
 
     /**
      * @param args the command line arguments
