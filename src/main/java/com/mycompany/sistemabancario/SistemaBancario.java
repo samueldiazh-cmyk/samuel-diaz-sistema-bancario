@@ -4,13 +4,13 @@
 
 package com.mycompany.sistemabancario;
 
-/**
- *
- * @author cdval
- */
+import vista.VistaBanco;
+
 public class SistemaBancario {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        VistaBanco vista = new VistaBanco();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
     }
 }
